@@ -15,13 +15,19 @@ app.get('/:userID/mood', (req, res) => {
     res.send(userID)
 })
 
+
+app.get('/:userID/mood', (req, res) => {
+    const { userID } = req.params;
+    res.send(userID)
+})
+
 app.get('/:userID', (req, res) => {
     const { userID } = req.params;
     res.send(userID)
 })
 
 app.get('/', (req, res) => {
-    res.render('pages/meditate');
+    res.send('homepage');
 })
 
 
