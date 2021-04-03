@@ -11,93 +11,100 @@ app.set('view engine', 'ejs')
 
 app.get('/user/:userID/diary/:entryID/edit', (req, res) => {
     const { userID, moodID } = req.params;
-    res.send(`Diary Entry ${moodID} page for ${entryID} `)
+    res.render('pages/user/diary/edit', req.params)
 })
 
 app.get('/user/:userID/diary/new', (req, res) => {
     const { userID, moodID } = req.params;
-    res.send(`Diary Entry  page for ${userID} `)
+    res.render('pages/user/diary/new', req.params)
 })
 
 
 app.get('/user/:userID/diary/:entryID', (req, res) => {
     const { userID, moodID } = req.params;
-    res.send(`Diary Entry ${entryID} page for ${userID} `)
+    res.render('pages/user/diary/diaryEntry', req.params)
 })
 
 app.get('/user/:userID/diary', (req, res) => {
     const { userID } = req.params;
-    res.send(`Diarypage for ${userID}`)
+    res.render('pages/user/diary/diaryPage', req.params)
 })
 
 
-app.get('/user/:userID/mood/edit', (req, res) => {
+app.get('/user/:userID/mood/:moodID/edit', (req, res) => {
     const { userID, moodID } = req.params;
-    res.send(`Mood Entry ${moodID} page for ${userID} `)
+    res.render('pages/user/mood/edit', req.params)
 })
 
 app.get('/user/:userID/mood/new', (req, res) => {
     const { userID, moodID } = req.params;
-    res.send(`Mood Entry ${moodID} page for ${userID} `)
+    res.render('pages/user/mood/new', req.params)
 })
 
 
 app.get('/user/:userID/mood/:moodID', (req, res) => {
     const { userID, moodID } = req.params;
-    res.send(`Mood Entry ${moodID} page for ${userID} `)
+    res.render('pages/user/mood/moodEntry', req.params)
 })
 
 app.get('/user/:userID/mood', (req, res) => {
     const { userID } = req.params;
-    res.send(`Moodpage for ${userID}`)
+    res.render('pages/user/mood/moodPage', req.params)
 })
 
+//✅
 app.get('/user/:userID/helpcall', (req, res) => {
     const { userID } = req.params;
-    res.send(`HelpCall page ${userID}`)
+    res.render('pages/user/help', req.params)
 })
 
-app.get('/user/:userID/helpcall', (req, res) => {
-    const { userID } = req.params;
-    res.send(`HelpCall page ${userID}`)
-})
 
+//✅
 app.get('/user/:userID/resources', (req, res) => {
     const { userID } = req.params;
-    res.send(`Resources Page for ${userID}`)
+    res.render('pages/user/resources', req.params)
 })
 
+//✅
 app.get('/user/:userID', (req, res) => {
-    const { userID } = req.params;
-    res.send(`Homepage for ${userID}`)
+    //const { "userID": userID } = req.params;
+    console.log(req.params);
+    res.render('pages/user/userpage', req.params)
 })
 
+//✅
 app.get('/helpcall', (req, res) => {
-    res.send('Get Help page');
+    res.render('pages/help');
 })
 
+//✅
 app.get('/signup', (req, res) => {
-    res.send('signup page');
+    res.render('pages/signup');
 })
 
+//✅
 app.get('/login', (req, res) => {
-    res.send('login page');
+    res.render('pages/login');
 })
 
+//✅
 app.get('/credits', (req, res) => {
-    res.send('credits page')
+    res.render('pages/credits')
 })
 
+//✅
 app.get('/about', (req, res) => {
-    res.send('about page')
+    res.render('pages/about')
 })
 
+//✅
 app.get('/', (req, res) => {
-    res.send('index page');
+    res.render('pages/index');
 })
 
+//✅
 app.get('*', (req, res) => {
-    res.send('404 page', 404);
+    res.send(`404 page \n Heck you doing here 🤨`, 404);
 })
 
 
