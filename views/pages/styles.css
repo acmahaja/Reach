@@ -21,5 +21,22 @@ td
 }
 
 .bottom-three {
-    margin-bottom: 1.5cm;
+    margin-bottom: 2cm;
  }
+
+.edgy {
+    font-family: Courier;
+    font-size: 25px;
+}
+
+.edgy1 {
+    font-family: Courier;
+    font-size: 15px;
+}
+
+.input[type=text] {
+    width: 70%;
+    padding: 50px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
