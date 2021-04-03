@@ -12,7 +12,13 @@
     <a href="/">Home Pages</a>
     <a href="/signup">Sign Up Page</a>
     <h1>Login Page</h1>
-    <a href="/user/FakeUser/">Login</a>
+    <form action="/login" method="POST">
+        <label for="email">email</label>
+        <input type="text" name="email" id="email">
+        <label for="password">password</label>
+        <input type="password" name="password" id="password">
+        <button type="submit">Log in</button>
+    </form>
 </body>
 
 </html>

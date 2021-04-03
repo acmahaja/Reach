@@ -12,8 +12,18 @@
     <a href="/">Home Pages</a>
     <a href="/">Login Up Page</a>
     <h1>Sign Page</h1>
-    <a href="/user/FakeUser/">Register</a>
-
+    <a href="/user/FakeUser/">Log In</a>
+    <form action="/user/new" method="POST">
+        <label for="name">First Name</label>
+        <input type="text" id="firstname" name="firstname" required><br>
+        <label for="name">Last Name</label>
+        <input type="text" id="lastname" name="lastname" required><br>
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">password</label>
+        <input type="password" id="password" name="password" required><br>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 
 </html>

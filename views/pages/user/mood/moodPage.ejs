@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= userID %> MoodPage
+        <%= firstname %> MoodPage
 
     </title>
 </head>
@@ -18,12 +18,17 @@
     <a href="./diary">Diary Log</a>
     <br>
     <h1>Mood Page for
-        <%= userID %>
+        <%= firstname %>
     </h1>
     <br>
     <a href="./mood/new">New</a>
-    <p><a href="./mood/moodEntryID/">moodEntryID</a>: This is a mood entry <a href="./mood/moodEntryID/edit">Edit</a>
-    </p>
+    <%= moods%>
+        <%for(let mood of moods){%>
+            <p><a href=<%=`./mood/${mood._id}`%>> <%=mood.date%></a>:
+                <%=mood.description%> <a href=<%=`./mood/${mood._id}/edit`%>>Edit</a>
+                    <%}%>
+
+            </p>
 
 
 </body>

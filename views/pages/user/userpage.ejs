@@ -6,20 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= userID %> Homepage
+        <%= firstname %>'s Homepage
     </title>
 </head>
 
 <body>
-    <a href="./helpcall">Get Help</a>
-    <a href="./resources">Helpful Resources</a>
-    <a href="./meditation">Meditation Page</a>
+    <a href=<%=`./${_id}/helpcall` %>>Get Help</a>
+    <a href=<%=`./${_id}/resources` %>>Helpful Resources</a>
+    <a href=<%=`./${_id}/meditation` %>>Meditation Page</a>
 
-    <a href="./mood">Mood Log</a>
-    <a href="./diary">Diary Log</a>
+    <a href=<%=`./${_id}/mood` %>>Mood Log</a>
+    <a href=<%=`./${_id}/diary` %>>Diary Log</a>
 
     <h1>Welcome
-        <%= userID %>
+        <%= firstname %>
+            <%= lastname %>
     </h1>
 </body>
 

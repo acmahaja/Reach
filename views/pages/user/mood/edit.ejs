@@ -18,13 +18,17 @@
     <a href="./diary">Diary Log</a>
     <br>
     <h1>Edit
-        <%= moodID %> for
+        <%= _id %> for
             <%= userID %>
     </h1>
+    EDIT DOESNT CURRENTLY WORK
     <br>
-    <p>This is a the edited mood entry:
-        <a href="./">Submit</a>
-    </p>
+    <form action=<%=`/user/${userID}/mood/edit` %> method="PUT">
+        <label for="description">Description</label><br>
+        <textarea name="description" id="" cols="30" rows="10"><%=description%></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
 
 </body>
 
