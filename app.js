@@ -1,5 +1,7 @@
 const express = require('express');
+const session = require('express-session')
 const app = express();
+
 const mongoose = require('mongoose')
 const path = require('path')
 const bodyParser = require('body-parser');
