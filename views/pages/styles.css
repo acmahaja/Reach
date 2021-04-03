@@ -1,0 +1,25 @@
+.test1
+{
+    margin: 0px auto;
+}
+
+table
+{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+td
+{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.piccy
+{
+    display: none;
+}
+
+.bottom-three {
+    margin-bottom: 1.5cm;
+ }
