@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-mongoose.connect('mongodb://localhost:27017/HackMelbourne', {
+mongoose.connect('mongodb+srv://acmahaja:GxHmB1N69HeCXsuo@cluster0.tsomk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
