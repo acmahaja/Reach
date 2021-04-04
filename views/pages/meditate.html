@@ -19,28 +19,30 @@
             Meditation is the act of clearing your mind. &#x2728;
         </div>
         <h1 class = "edgy" style = "font-size: 45px;">Meditate.</h1>
-        <p class = "padder" style = "font-size: 15px;"><i>"There are many good reasons why a person might choose to meditate—the classic reason being to reduce psychological suffering. Paradoxically, this is accomplished not by trying to avoid or improve one’s experience, but by clearly observing how thoughts and emotions arise, proliferate, and become enshrined in behavior. Seeing the whole apparatus at work can be incredibly freeing."</i> - Samuel Harris.</p>
-        <div id="picture">
+        <p id="remove1" class = "tomove padder" style = "font-size: 15px;"><i>"There are many good reasons why a person might choose to meditate—the classic reason being to reduce psychological suffering. Paradoxically, this is accomplished not by trying to avoid or improve one’s experience, but by clearly observing how thoughts and emotions arise, proliferate, and become enshrined in behavior. Seeing the whole apparatus at work can be incredibly freeing."</i> - Samuel Harris.</p>
+        <div id="picture" class="tomove">
             <img src="meditate.png" alt="Pic" width="350">
         </div>
-        <p class = "padder">Meditation is a powerful tool for <b>clearing the mind</b> and living an <b>examined life</b>. This page of Reach is dedicated for providing a tool for doing just that. Below is a timer you can use to specify and start a meditation session - how long is entirely up to you. If you're signed in you're able to:</p>
+        <div id="remove2" class="tomove"><p class = "padder">Meditation is a powerful tool for <b>clearing the mind</b> and living an <b>examined life</b>. This page of Reach is dedicated for providing a tool for doing just that. Below is a timer you can use to specify and start a meditation session - how long is entirely up to you. If you're signed in you're able to:</p>
         <ul class="ul">
             <li>Track your meditation progress &#x1F389;</li>
             <li>Visually see your meditation history plotted graphically &#x1F4C8;</li>
             <li>See your streaks &#x1F525;</li>
         </ul>
+        <!-- <button class="hide" id="tester">Hey.</button> -->
+        <p></p>
         <p>If you're ready to get started, enter below the amount of time you'd like to meditate for in <b>minutes</b>.</p>
         <form id="form1" onsubmit="return false">
             <input id="time" placeholder="How many minutes?" type="text">
             <input id="submit" value="Let's go!" type="submit">
-        </form>
+        </form></div>
         <p></p>
         <button id="button" style = "display: none;">Click me!</button>
         <div id="timedisplay"></div>
         <p></p>
-        <div id="timerobject" style = "display: none;">&#x23F3; Happy medidating! Time remaining: <span id="timer"></span> &#x23F3;</div>
+        <div id="timerobject" style = "display: none;">&#x23F3; Happy meditating! Time remaining: <span id="timer"></span> &#x23F3;</div>
         <p></p>
-        <div id = "finished" style = "display: none;">Excellent work today! Your streak is now ___. See you next time &#x1F438; </div>
+        <div id = "finished" style = "display: none;">Excellent work today! See you next time! &#x1F438; </div>
     </body>
 </html>
 
