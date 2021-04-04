@@ -36,6 +36,7 @@
     
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
+                    <a href="https://acmahaja.github.io/hackithon/views/pages/homepage.html" class="nav-item nav-link"> Home</a>
                     <a href="https://acmahaja.github.io/hackithon/views/pages/meditate.html" class="nav-item nav-link"> Meditation</a>
                     <a href="https://acmahaja.github.io/hackithon/views/pages/mood.html" class="nav-item nav-link">Mood</a>
                     <a href="https://acmahaja.github.io/hackithon/views/pages/resources.html" class="nav-item nav-link">Resources</a>
@@ -51,10 +52,12 @@
         <h2 style="font-size: 17px;">Enter your details below to sign in.</h2>
         <br>
         <form action="/user/new" method="POST">
+        <div style="align-content: center;">
             <label for="email" class="llabel">Email:&nbsp;&nbsp;</label>
             <input type="email" class="iinput" id="email" name="email" required><br>
             <label for="password" class="llabel">Password:&nbsp;&nbsp;</label>
             <input type="password" class="iinput" id="password" name="password" required><br>
+        </div>
             <br><br><button class="btn btn-primary" id = "submitbutton" type="submit">Log in!</button>
         </form>
         <div id="picture">
