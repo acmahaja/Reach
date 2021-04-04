@@ -7,28 +7,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <%= userID %> MoodPage
-
     </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lekton&display=swap');
+        html {
+            overflow-x: hidden;
+        }
+        
+        body {
+            color: #64c7cb;
+            text-align: center;
+            overflow: hidden;
+            font-family: 'Lekton', sans-serif;
+        }
+        
+        .entry {
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .yellow {
+            background-color: #f9eec7;
+        }
+        
+        .green {
+            background-color: #d1e5e1;
+        }
+        
+        .orange {
+            background-color: #fbe2d8;
+        }
+        
+        .pink {
+            background-color: #fae9ed;
+        }
+        
+        .pills {
+            border-radius: .5rem;
+            padding: 1rem 2rem;
+            width: fit-content;
+            text-align: center;
+        }
+        
+        .pill {
+            text-align: center;
+            color: grey;
+        }
+        
+        textarea {
+            background-color: #d1e4e1;
+            color: white;
+            border: none;
+            border-radius: .5rem;
+            padding: .25rem;
+            width: 75vw;
+            height: 40vh;
+        }
+        
+        button {
+            height: 2rem;
+            width: 10rem;
+            background-color: #afdfdb;
+            border: 0;
+            border-radius: .5rem;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
-    <a href="./helpcall">Get Help</a>
-    <a href="./resources">Helpful Resources</a>
-    <a href="./mood">Mood Log</a>
-    <a href="./diary">Diary Log</a>
+    <h2 id="date">
+        Edit Your Entry for
+        <%var months=[ 'January' , 'February' , 'March' , 'April' , 'May' , 'June' , 'July' , 'August' , 'September'
+            , 'October' , 'November' , 'December' ];%>
+            <%var days=['Sun', 'Mon' , 'Tue' , 'Wed' , 'Thu' , 'Fri' , 'Sat' ];%>
+                <%= days[date.getDay()]%>
+                    <%= date.getDate()%>
+                        <%= months[date.getMonth()]%>
+    </h2>
+    <div class="entry">
+
+        <p>These were your thoughts that day:</p>
+        <form action=<%=`/user/${userID}/mood/${_id}/edit?_method=PUT`%> method="POST">
+            <label for="description">Description</label><br>
+            <textarea name="description" id="" cols="30" rows="10"><%=description%></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
     <br>
-    <h1>Edit
-        <%= _id %> for
-            <%= userID %>
-    </h1>
-    EDIT DOESNT CURRENTLY WORK
-    <br>
-    <form action=<%=`/user/${userID}/mood/${_id}/edit?_method=PUT`%> method="POST">
-        <label for="description">Description</label><br>
-        <textarea name="description" id="" cols="30" rows="10"><%=description%></textarea>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
 
 </body>
 

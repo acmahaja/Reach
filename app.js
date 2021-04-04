@@ -106,17 +106,19 @@ app.post('/medidate/new', async(req, res) => {
 })
 
 app.delete('/user/:userID/mood/:moodID', async(req, res) => {
+
     Moods.findByIdAndDelete(req.params.moodID, () => {
         res.redirect(`/user/${req.params.userID}/mood`)
     })
 })
 
 app.put('/user/:userID/mood/:moodID/edit', async(req, res) => {
+    console.log(req.body);
     await Moods.findById(req.params.moodID)
         .then((result) => {
             result.description = req.body.description
             Moods.findByIdAndUpdate(req.params.moodID, result, () => {
-                res.redirect(`/user/${req.params.userID}/meditation`)
+                res.redirect(`/user/${req.params.userID}/mood/${req.params.moodID}`)
             });
         })
 })
@@ -144,7 +146,7 @@ app.post('/mood/new', (req, res) => {
     var body = req.body;
     body._id = uuid;
     body.userID = req.cookies.userid;
-    body.date = d.toString();
+    body.date = d;
     console.log(body);
     const newMoods = new Moods(body);
     newMoods.save().then((mood) => {
@@ -165,15 +167,19 @@ app.get('/user/:userID/mood/:moodID', async(req, res) => {
     const { userID, moodID } = req.params;
     //res.render('pages/user/mood/moodEntry', req.params)
     let userData = {};
+    console.log(userData);
+
+    const d = new Date();
     await Users.findById(userID)
         .then(result => {
+
             Object.assign(userData, result._doc)
         }).then(
             await Moods.findById(moodID)
             .then(result => {
-                //console.log(userData);
                 Object.assign(userData, result._doc)
                 res.render('pages/user/mood/moodEntry', userData)
+                    //res.send(userData)
             })
         )
 })

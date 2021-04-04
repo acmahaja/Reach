@@ -7,29 +7,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <%= firstname %> MoodPage
-
     </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lekton&display=swap');
+        html {
+            overflow-x: hidden;
+        }
+        
+        body {
+            color: #64c7cb;
+            text-align: center;
+            overflow: hidden;
+            font-family: 'Lekton', sans-serif;
+            align-items: center;
+        }
+        
+        .entry {
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .yellow {
+            background-color: #f9eec7;
+        }
+        
+        .green {
+            background-color: #d1e5e1;
+        }
+        
+        .orange {
+            background-color: #fbe2d8;
+        }
+        
+        .pink {
+            background-color: #fae9ed;
+        }
+        
+        .pills {
+            border-radius: .5rem;
+            width: fit-content;
+            text-align: center;
+            width: 15rem;
+            height: 2rem;
+            margin: .50rem 0;
+            vertical-align: middle;
+        }
+        
+        .pill {
+            text-align: center;
+            color: grey;
+        }
+        
+        .thoughts {
+            color: white;
+            background-color: #d1e4e1;
+            width: 75vw;
+            height: fit-content;
+            border-radius: .5rem;
+        }
+        
+        .holder {
+            display: flex;
+            width: 100vw;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
-    <a href="./helpcall">Get Help</a>
-    <a href="./resources">Helpful Resources</a>
-    <a href="../mood">Mood Log</a>
-    <a href="./diary">Diary Log</a>
-    <br>
     <h1>Mood Page for
         <%= firstname %>
     </h1>
-    <br>
     <a href="./mood/new">New</a>
-    <%for(let mood of moods){%>
-        <p><a href=<%=`./mood/${mood._id}`%>> <%=mood.date%></a>:
-            <%=mood.description%> <a href=<%=`./mood/${mood._id}/edit`%>>Edit</a>
-                <form action=<%=`./mood/${mood._id}?_method=DELETE`%> method="POST">
-                    <button type="submit">Delete</button>
-                </form>
-                <%}%>
-        </p>
+    <div class="holder">
+
+        <%for(let mood of moods){%>
+            <% switch (mood.mood) { case 1 : %>
+                <div class="pills pink">
+                    <% break; case 2 : %>
+                        <div class="pills green">
+                            <% break; case 3 : %>
+                                <div class="pills orange">
+                                    <% break; case 4 : %>
+                                        <div class="pills yellow">
+                                            <% break; default: %>
+                                                <div class="pills">
+                                                    <%}%>
+                                                        <div onclick=<%=`location.href='./mood/${mood._id}' `%>>
+                                                            <%var months=[ 'January' , 'February' , 'March' , 'April'
+                                                                , 'May' , 'June' , 'July' , 'August' , 'September'
+                                                                , 'October' , 'November' , 'December' ];%>
+                                                                <%var days=['Sun', 'Mon' , 'Tue' , 'Wed' , 'Thu' , 'Fri'
+                                                                    , 'Sat' ];%>
+                                                                    <%= days[mood.date.getDay()]%>
+                                                                        <%= mood.date.getDate()%>
+                                                                            <%= months[mood.date.getMonth()]%>
+                                                                                -
+                                                                                <% switch (mood.mood) { case 1 : %>
+                                                                                    Happy
+                                                                                    <% break; case 2 : %>
+                                                                                        Stressed
+                                                                                        <% break; case 3 : %>
+                                                                                            Excited
+                                                                                            <% break; case 4 : %>
+                                                                                                Sad
+                                                                                                <% break; default:
+                                                                                                    break; } %>
+
+                                                        </div>
+                                                </div>
+
+                                                <%}%>
+                                        </div>
 
 </body>
 

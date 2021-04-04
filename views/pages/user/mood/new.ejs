@@ -8,67 +8,284 @@
     <title>
         Enter New Mood
     </title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lekton&display=swap');
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            color: #50afb3;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .field {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Lekton', sans-serif;
+        }
+        
+        input[type=radio] {
+            opacity: 10;
+            position: fixed;
+        }
+        
+        input[type=radio]+label {
+            background-color: #eee;
+            padding: 1em;
+        }
+        
+        input {
+            visibility: hidden;
+        }
+        
+        input:checked+label {
+            color: red;
+        }
+        
+        label {
+            color: grey;
+            height: 5rem;
+            display: inline-block;
+            height: 2rem;
+            width: 15rem;
+            border-radius: 8px;
+        }
+        
+        .option {
+            margin: .5rem 0rem;
+        }
+        
+        .yellow {
+            background-color: #f9eec7;
+        }
+        
+        .green {
+            background-color: #d1e5e1;
+        }
+        
+        .orange {
+            background-color: #fbe2d8;
+        }
+        
+        .pink {
+            background-color: #fae9ed;
+        }
+        
+        img {
+            width: 18rem;
+        }
+        
+        textarea {
+            background-color: #d1e4e1;
+            color: white;
+            border: none;
+            border-radius: .5rem;
+            padding: .25rem;
+        }
+        
+        button {
+            height: 2rem;
+            width: 10rem;
+            background-color: #afdfdb;
+            border: 0;
+            border-radius: .5rem;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
-    <a href="./helpcall">Get Help</a>
-    <a href="./resources">Helpful Resources</a>
-    <a href="./mood">Mood Log</a>
-    <a href="./diary">Diary Log</a>
-    <br>
-    <h1>Enter new Diary Entry
-    </h1>
-    <br>
-    <h2>This is a new Mood entry:</h2>
 
     <form action="/mood/new" method="POST">
-        <p>How are you feeling today?</p>
-        <label for="Happy">Happy</label>
-        <input type="radio" name="mood" id="Happy" value="1"><br>
-        <label for="Stressed">Stressed</label>
-        <input type="radio" name="mood" id="Stressed" value="2"><br>
-        <label for="Excited">Happy</label>
-        <input type="radio" name="mood" id="Excited" value="3"><br>
-        <label for="Sad">Sad</label>
-        <input type="radio" name="mood" id="Sad" value="4"><br>
+        <div class="field">
+
+            <div class="option">
+                <h2>Hello</h2>
+                <h3>How are you feeling today?</h3>
+            </div>
+            <div class="option ">
+
+                <label for="Happy" class="pink">Happy
+                    <input type="radio" name="mood" id="Happy" value="1"><br></label>
+            </div>
+            <div class="option ">
+
+                <label for="Stressed" class="green">Stressed
+                    <input type="radio" name="mood" id="Stressed" value="2"><br></label>
+            </div>
+            <div class="option ">
+
+                <label for="Excited" class="orange">Excited
+                    <input type="radio" name="mood" id="Excited" value="3"><br></label>
+            </div>
+            <div class="option ">
+                <label for="Sad" class="yellow">Sad
+                    <input type="radio" name="mood" id="Sad" value="4"><br></label>
+            </div>
+            <a href="#slept">skip</a>
+            <div>
+
+                <img src="../../../Illustrations/urban-line-education.png" alt="">
+            </div>
+        </div>
+
+        <div class="field" id="slept">
+            <p>How many hours have you slept last night?</p>
+            <div class="option">
+                <label for="eight" class="pink">More than 8
+                    <input type="radio" name="sleep" id="eight" value="8">
+
+                </label>
+            </div>
+            <div class="option">
+
+                <label for="six" class="green">6-7
+
+                    <input type="radio" name="sleep" id="six" value="6">
+                </label>
+            </div>
+            <div class="option">
+                <label for="two" class="orange">2-5
+
+                    <input type="radio" name="sleep" id="two" value="2">
+                </label>
+            </div>
+            <div class="option">
+                <label for="one" class="yellow">Less Than 1 hr
+                    <input type="radio" name="sleep" id="one" value="1">
+                </label>
+            </div>
+            <a href="#food">skip</a>
+            <div>
+
+                <img src="../../../Illustrations/urban-line-message-sent.png" alt="">
+            </div>
+        </div>
+        <div class="field" id="food">
+
+            <p>How many meals have you had yesterday</p>
+            <div class="option">
+                <label for="three" class="pink">3 or more
+                    <input type="radio" name="meals" id="three" value="3">
+                </label>
+
+            </div>
+            <div class="option">
+                <label for="twos" class="green">2
+                    <input type="radio" name="meals" id="twos" value="2">
+                </label>
+            </div>
+            <div class="option">
+                <label for="ones" class="orange">1
+                    <input type="radio" name="meals" id="ones" value="1">
+                </label>
+            </div>
+            <div class="option">
+                <label for="coffee" class="yellow">Just a cup of coffee
+                    <input type="radio" name="meals" id="coffee" value="0">
+                </label>
+            </div>
+            <a href="#friends">skip</a>
+            <div>
+
+                <img src="../../../Illustrations/urban-line-308.png" alt="">
+            </div>
+        </div>
         <br>
-        <p>How many hours have you slept last night?</p>
-        <label for="eight">More than 8</label>
-        <input type="radio" name="sleep" id="eight" value="8"><br>
-        <label for="six">6-7</label>
-        <input type="radio" name="sleep" id="six" value="6"><br>
-        <label for="two">2-5</label>
-        <input type="radio" name="sleep" id="two" value="2"><br>
-        <label for="one">Less Than 1 hr</label>
-        <input type="radio" name="sleep" id="one" value="1"><br>
-        <br>
-        <p>How many meals have you had yesterday</p>
-        <label for="three">3 or more</label>
-        <input type="radio" name="meals" id="three" value="3"><br>
-        <label for="two">2</label>
-        <input type="radio" name="meals" id="two" value="2"><br>
-        <label for="one">1</label>
-        <input type="radio" name="meals" id="one" value="1"><br>
-        <label for="coffee">Just a cup of coffee</label>
-        <input type="radio" name="meals" id="coffee" value="0"><br>
-        <br>
-        <p>Have you met with anyone yesteday</p>
-        <label for="friend">Some friend</label>
-        <input type="radio" name="people" id="friend" value="1"><br>
-        <label for="family">My family</label>
-        <input type="radio" name="people" id="family" value="2"><br>
-        <label for="date">Went on a date</label>
-        <input type="radio" name="people" id="radio" value="3"><br>
-        <label for="none">No I stayed in</label>
-        <input type="radio" name="people" id="none" value="4"><br>
-        <br>
-        <label for="description">Enter Description</label><br>
-        <textarea name="description" id="description" cols="30" rows="10">
-                Enter Text Area
-            </textarea><br>
-        <button>Submit</button>
+        <div class="field" id="friends">
+            <p>Did you meet anyone yesterday?</p>
+
+            <div class="option">
+
+                <label for="friend" class="pink">Some friend
+                    <input type="radio" name="people" id="friend" value="1"><br></label>
+            </div>
+            <div class="option">
+
+                <label for="family" class="green">My family
+                    <input type="radio" name="people" id="family" value="2"><br></label>
+            </div>
+            <div class="option">
+
+                <label for="date" class="orange">Went on a date
+                    <input type="radio" name="people" id="date" value="3"><br></label>
+            </div>
+            <div class="option">
+
+                <label for="none" class="yellow">No I stayed in
+                    <input type="radio" name="people" id="none" value="4"><br></label>
+            </div>
+
+            <a href="#thoughts">skip</a>
+            <div>
+
+                <img src="../../../Illustrations/urban-line-420.png" alt="">
+            </div>
+        </div>
+        <div class="field" id="thoughts">
+
+
+            <p>What's on your mind right now</p>
+            <div class="option">
+                <label for="description">
+                    <textarea name="description" id="description" cols="30" rows="10">Enter Text Area
+                    </textarea><br>
+                </label>
+            </div>
+            <div class="option">
+                <button>Submit</button>
+            </div>
+            <div class="option">
+
+                <img src="../../../Illustrations/urban-line-475.png" alt="">
+            </div>
+        </div>
+
     </form>
 
+    <script>
+        let i = document.querySelector('#Happy');
+        i.addEventListener('click', () => location.href = "#slept")
+        i = document.querySelector('#Stressed');
+        i.addEventListener('click', () => location.href = "#slept")
+        i = document.querySelector('#Excited');
+        i.addEventListener('click', () => location.href = "#slept")
+        i = document.querySelector('#Sad');
+        i.addEventListener('click', () => location.href = "#slept")
+
+        i = document.querySelector('#eight');
+        i.addEventListener('click', () => location.href = "#food")
+        i = document.querySelector('#six');
+        i.addEventListener('click', () => location.href = "#food")
+        i = document.querySelector('#two');
+        i.addEventListener('click', () => location.href = "#food")
+        i = document.querySelector('#one');
+        i.addEventListener('click', () => location.href = "#food")
+
+        i = document.querySelector('#three');
+        i.addEventListener('click', () => location.href = "#friends")
+        i = document.querySelector('#twos');
+        i.addEventListener('click', () => location.href = "#friends")
+        i = document.querySelector('#ones');
+        i.addEventListener('click', () => location.href = "#friends")
+        i = document.querySelector('#coffee');
+        i.addEventListener('click', () => location.href = "#friends")
+
+        i = document.querySelector('#friend');
+        i.addEventListener('click', () => location.href = "#thoughts")
+        i = document.querySelector('#family');
+        i.addEventListener('click', () => location.href = "#thoughts")
+        i = document.querySelector('#date');
+        i.addEventListener('click', () => location.href = "#thoughts")
+        i = document.querySelector('#none');
+        i.addEventListener('click', () => location.href = "#thoughts")
+    </script>
 </body>
 
 </html>

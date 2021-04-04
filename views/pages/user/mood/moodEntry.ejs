@@ -7,27 +7,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <%= userID %> MoodPage
-
     </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lekton&display=swap');
+        html {
+            overflow-x: hidden;
+        }
+        
+        body {
+            color: #64c7cb;
+            text-align: center;
+            overflow: hidden;
+            font-family: 'Lekton', sans-serif;
+        }
+        
+        .entry {
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .yellow {
+            background-color: #f9eec7;
+        }
+        
+        .green {
+            background-color: #d1e5e1;
+        }
+        
+        .orange {
+            background-color: #fbe2d8;
+        }
+        
+        .pink {
+            background-color: #fae9ed;
+        }
+        
+        .pills {
+            border-radius: .5rem;
+            padding: 1rem 2rem;
+            width: fit-content;
+            text-align: center;
+        }
+        
+        .pill {
+            text-align: center;
+            color: grey;
+        }
+        
+        .thoughts {
+            color: white;
+            background-color: #d1e4e1;
+            width: 75vw;
+            height: fit-content;
+            border-radius: .5rem;
+        }
+    </style>
 </head>
 
 <body>
-    <a href="./helpcall">Get Help</a>
-    <a href="./resources">Helpful Resources</a>
-    <a href="./mood">Mood Log</a>
-    <a href="./diary">Diary Log</a>
-    <br>
-    <h1>
-        <%= _id %> Entry for
-            <%= firstname %> on
-                <%= date %>
-    </h1>
-    <p>
-        <%= description %>
-    </p>
-    <a href=<%=`./${_id}/edit`%>>Edit</a>
-    <br>
+    <h2 id="date">
+        Your Entry for
+        <%var months=[ 'January' , 'February' , 'March' , 'April' , 'May' , 'June' , 'July' , 'August' , 'September'
+            , 'October' , 'November' , 'December' ];%>
+            <%var days=['Sun', 'Mon' , 'Tue' , 'Wed' , 'Thu' , 'Fri' , 'Sat' ];%>
+                <%= days[date.getDay()]%>
+                    <%= date.getDate()%>
+                        <%= months[date.getMonth()]%>
+    </h2>
+    <div class="entry">
+        <% switch (mood) { case 1 : %>
+            <div class="pills pink">
+                <% break; case 2 : %>
+                    <div class="pills green">
+                        <% break; case 3 : %>
+                            <div class="pills orange">
+                                <% break; case 4 : %>
+                                    <div class="pills yellow">
+                                        <% break; default: %>
+                                            <div class="pills">
+                                                <%}%>
 
+
+                                                    <div class="pill">
+                                                        I felt
+                                                        <% switch (mood) { case 1 : %>
+                                                            Happy
+                                                            <% break; case 2 : %>
+                                                                Stressed
+                                                                <% break; case 3 : %>
+                                                                    Excited
+                                                                    <% break; case 4 : %>
+                                                                        Sad
+                                                                        <% break; default: break; } %>
+                                                                            .
+                                                    </div>
+
+                                                    <div class="pill">
+                                                        I slept for
+                                                        <% switch (sleep) { case 1 : %>
+                                                            Less Than 1 hr
+                                                            <% break; case 2 : %>
+                                                                2-5 hours
+                                                                <% break; case 6 : %>
+                                                                    6-7 hours
+                                                                    <% break; case 8 : %>
+                                                                        More than 8 hours
+                                                                        <% break; default: break; } %>
+                                                    </div>
+
+                                                    <div class="pill">
+                                                        I had
+                                                        <% switch (meals) { case 0 : %>
+                                                            Just a cup of coffee
+                                                            <% break; case 1 : %>
+                                                                1 meal
+                                                                <% break; case 2 : %>
+                                                                    2 meals
+                                                                    <% break; case 3 : %>
+                                                                        3 meals
+                                                                        <% break; default: break; } %>
+                                                    </div>
+
+                                                    <div class="pill">
+                                                        I met
+                                                        <% switch (people) { case 0 : %>
+                                                            I met some friend
+                                                            <% break; case 1 : %>
+                                                                I met my family
+                                                                <% break; case 2 : %>
+                                                                    I met went on a date
+                                                                    <% break; case 3 : %>
+                                                                        I stayed in
+                                                                        <% break; default: break; } %>
+                                                    </div>
+
+                                            </div>
+
+                                            <p>These were your thoughts that day:</p>
+
+                                            <div class="thoughts">
+
+                                                <%= description %>
+                                            </div>
+                                            <a href=<%=`./${_id}/edit`%>>Edit</a>
+
+                                    </div>
+                                    <br>
 
 </body>
 
