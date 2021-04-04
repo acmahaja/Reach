@@ -84,9 +84,7 @@ li{
 
 
 p{
-    font-size: max(2.5vh, 30px);
-    padding-left: 5vw;
-    padding-right: 5vw;
+    font-size: max(1.8h, 30px);
 }
 
 h1{
@@ -116,5 +114,9 @@ h2{
 }
 
 .card-body{
-    padding: -5px 5px 5px 5px;
+    padding: 0px;
+}
+
+.card-image-top{
+    max-width: max(10vw, 50px);
 }
