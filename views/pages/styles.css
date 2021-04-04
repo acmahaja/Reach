@@ -51,3 +51,15 @@ td
     padding-left: 5%;
     padding-right: 5%;
 }
+
+.llabel{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 41%;
+    text-align: right;
+}
+.iinput {
+  display: inline-block;
+  float: left;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sign Up</title>
+</head>
+
+<body style="text-align: center; background-color: aliceblue;">
+    <nav class="navbar navbar-light bg-light">
+        <form class="col text-center" class="container-fluid justify-content-start">
+          <button class="btn btn-outline-success me-2" type="button"><a href="/">Home</a></button>
+          <button class="btn btn-sm btn-outline-secondary" type="button"><a href="/">Login</a></button>
+        </form>
+    </nav>
+    <br>
+    <h1 style="font-family: 'Courier New', Courier, monospace; font-size: 50px;">Welcome to Reach!</h1>
+    <br>
+    <h2 style="font-size: 17px;">Enter your details below to sign up and get started.</h2>
+    <br>
+    <form action="/user/new" method="POST">
+        <label for="name">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required><br>
+        <label for="name">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <br><button class="btn btn-success" id = "submitbutton" type="submit">Sign up now!</button>
+    </form>
+    <div id="picture">
+        <img src="Illustrations/urban-line-success.png" alt="Pic" width="500">
+    </div>
+    <a href="/user/FakeUser/">Fake User ?</a>
+</body>
+</html>
+
+<!-- // Welcome Back. Enter your details below to sign in. -->
