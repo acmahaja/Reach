@@ -7,17 +7,32 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sign Up</title>
+    <title>REACH - Sign Up</title>
+    <link rel="icon" href="./assets/logoPH.png">
 </head>
 
 <body style="text-align: center; background-color: aliceblue;">
-    <nav class="navbar navbar-light bg-light">
-        <form class="col text-center" class="container-fluid justify-content-start">
-            <button class="btn btn-outline-success me-2" type="button"><a href="/">Home</a></button>
-            <button class="btn btn-sm btn-outline-secondary" type="button"><a href="/">Login</a></button>
-        </form>
-    </nav>
-    <br>
+    <div class="bs-example">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a href="/" class="navbar-brand">
+                <img src="./assets/logoPH.png" height="30" alt="REACH logo"> REACH
+            </a>
+
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="justify-content-end collapse navbar-collapse" id="navbarCollapse" style="font-size: min(5vh, 20px);">
+                <div class="navbar-nav">
+                    <a href="/meditation" class="nav-item nav-link">
+                        Meditation</a>
+                    <a href="/resources" class="nav-item nav-link">Resources</a>
+                    <a href="/about" class="nav-item  nav-link">About Us</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
     <h1 style="font-family: 'Courier New', Courier, monospace; font-size: 50px;">Welcome to Reach!</h1>
     <br>
     <h2 style="font-size: 17px;">Enter your details below to sign up and get started.</h2>
@@ -36,7 +51,6 @@
     <div id="picture">
         <img src="Illustrations/urban-line-success.png" alt="Pic" width="500">
     </div>
-    <a href="/user/FakeUser/">Fake User ?</a>
 </body>
 
 </html>

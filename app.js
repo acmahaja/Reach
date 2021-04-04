@@ -201,7 +201,8 @@ app.get('/user/:userID/mood', async(req, res) => {
         .then(result => Object.assign(userData, result._doc)).then(
             Moods.find({ $or: [userID] }, function(err, moods) {
                 userData.moods = moods
-                    //res.send(userData);
+                userData.userID = req.params.userID;
+                //res.send(userData);
                 res.render('pages/user/mood/moodPage', userData);
             })
         );
@@ -224,7 +225,7 @@ app.get('/user/:userID/resources', (req, res) => {
 app.get('/user/:userID', async(req, res) => {
     console.log(req.cookies)
     await Users.findById(req.params.userID)
-        .then(result => res.render('pages/user/userpage', result));
+        .then(result => res.render('pages/user/userpage', req.params));
 })
 
 app.post('/user/new', async(req, res) => {
@@ -247,6 +248,7 @@ app.post('/user/new', async(req, res) => {
         });
 })
 
+//✅
 app.get('/signup', (req, res) => {
     res.render('pages/signup');
 })
@@ -256,12 +258,12 @@ app.get('/helpcall', (req, res) => {
 })
 
 app.post('/login', async(req, res) => {
-    const userID = {};
-    userID._id = req.params.userID;
+    console.log(req.body);
+
     const requestBody = {};
     requestBody.email = req.body.email;
-    await Users.findOne(requestBody).then(result => {
-        console.log(result.password)
+    await Users.findOne(requestBody).then((result) => {
+        console.log(result)
         console.log(req.body.password)
         if (result.password === req.body.password) {
             res.cookie('userid', result._id);
@@ -284,22 +286,22 @@ app.get('/login', (req, res) => {
     res.render('pages/login');
 })
 
-
+//✅
 app.get('/meditation', (req, res) => {
     res.render('pages/user/meditation', req.params)
 })
 
-
+//✅
 app.get('/home', (req, res) => {
     res.render('pages/home', req.params)
 });
 
+//✅
 app.get('/resources', (req, res) => {
     res.render('pages/resources')
 })
 
 //✅
-
 app.get('/about', (req, res) => {
     res.render('pages/about')
 })

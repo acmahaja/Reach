@@ -2,9 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- MY STYLESHEET-->
+    <link rel="stylesheet" href="../../styles/styles3.css">
+
+    <!-- Display NEED TO CHANGE-->
+    <title>REACH - Home Page</title>
+    <link rel="icon" href="../../assets/logoPH.png">
+
+    <!-- ANIMATE.STYLE LIB-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- GOOGLE FONTS - HOPEFULLY RIGHT ONE?-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lekton&display=swap" rel="stylesheet">
     <title>
         <%= firstname %> MoodPage
     </title>
@@ -78,6 +95,28 @@
 </head>
 
 <body>
+    <div class="bs-example">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a href="/" class="navbar-brand">
+                <img src="../../assets/logoPH.png" height="30" alt="REACH logo">
+            </a>
+            REACH
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="justify-content-end collapse navbar-collapse" id="navbarCollapse" style="font-size: min(5vh, 20px);">
+                <div class="navbar-nav">
+                    <a href=<%=`/user/${userID}/`%> class="nav-item nav-link"> Home</a>
+                    <a href=<%=`/user/${userID}/meditation`%> class="nav-item nav-link">
+                        Meditation</a>
+                    <a href=<%=`/user/${userID}/mood`%> class="nav-item active nav-link">Mood</a>
+                    <a href=<%=`/resources`%> class="nav-item nav-link">Resources</a>
+                    <a href=<%=`/about`%> class="nav-item nav-link">About Us</a>
+                </div>
+            </div>
+        </nav>
+    </div>
     <h1>Mood Page for
         <%= firstname %>
     </h1>

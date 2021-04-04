@@ -1,28 +1,28 @@
-.test1
-{
+nav {
+    font-size: min(5vh, 20px);
+}
+
+.test1 {
     margin: 0px auto;
 }
 
-table
-{
+table {
     border: 2px solid black;
     border-collapse: collapse;
 }
 
-td
-{
+td {
     border: 1px solid black;
     padding: 5px;
 }
 
-.piccy
-{
+.piccy {
     display: none;
 }
 
 .bottom-three {
     margin-bottom: 2cm;
- }
+}
 
 .edgy {
     font-family: Courier;
@@ -39,7 +39,7 @@ td
     padding: 50px 10px;
     margin: 8px 0;
     box-sizing: border-box;
-  }
+}
 
 .ul {
     text-align: left;
@@ -52,14 +52,46 @@ td
     padding-right: 5%;
 }
 
-.llabel{
+.llabel {
     display: inline-block;
     float: left;
     clear: left;
     width: 41%;
     text-align: right;
 }
+
 .iinput {
-  display: inline-block;
-  float: left;
+    display: inline-block;
+    float: left;
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+        height: 100%;
+        /* line-height: 100%;
+        padding: 20px;
+        margin-bottom: 10px; */
+    }
+    75% {
+        opacity: 0;
+        height: 100%;
+        line-height: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    100% {
+        opacity: 0;
+        height: 0px;
+        line-height: 0px;
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+.tomove {
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
