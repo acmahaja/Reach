@@ -23,7 +23,7 @@
     </h1>
     EDIT DOESNT CURRENTLY WORK
     <br>
-    <form action=<%=`/user/${userID}/mood/edit` %> method="PUT">
+    <form action=<%=`/user/${userID}/mood/${_id}/edit?_method=PUT`%> method="POST">
         <label for="description">Description</label><br>
         <textarea name="description" id="" cols="30" rows="10"><%=description%></textarea>
         <br>

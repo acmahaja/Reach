@@ -14,9 +14,17 @@ const mongooseSchema = mongoose.Schema({
         type: Date,
         required: true
     },
-    moods: {
-        type: Object,
-        required: true
+    mood: {
+        type: Number,
+    },
+    sleep: {
+        type: Number,
+    },
+    meals: {
+        type: Number,
+    },
+    people: {
+        type: Number
     },
     description: {
         type: String,
