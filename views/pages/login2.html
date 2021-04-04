@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- MY STYLESHEET-->
+    <link rel="stylesheet" href="./styles/login2.css">
+
+    <!-- Display NEED TO CHANGE-->
+    <title>REACH - About Us</title>
+    <link rel="icon" href="./assets/logoPH.png">
+
+    <!-- ANIMATE.STYLE LIB-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- GOOGLE FONTS - HOPEFULLY RIGHT ONE?-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lekton&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="bs-example">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a href="https://acmahaja.github.io/hackithon/views/pages/landing.html" class="navbar-brand">
+                <img src="./assets/logoPH.png" height="30" alt="REACH logo">
+                REACH                
+            </a>
+           
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="https://acmahaja.github.io/hackithon/views/pages/meditate.html" class="nav-item nav-link"> Meditation</a>
+                    <a href="https://acmahaja.github.io/hackithon/views/pages/mood.html" class="nav-item nav-link">Mood</a>
+                    <a href="https://acmahaja.github.io/hackithon/views/pages/resources.html" class="nav-item nav-link">Resources</a>
+                    <a href="https://acmahaja.github.io/hackithon/views/pages/aboutus.html" class="nav-item nav-link">About Us</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="loginstuffs">
+        <br>
+        <h1 style="font-family: 'Courier New', Courier, monospace; font-size: 50px;">Welcome back!</h1>
+        <br>
+        <h2 style="font-size: 17px;">Enter your details below to sign in.</h2>
+        <br>
+        <form action="/user/new" method="POST">
+            <label for="email" class="llabel">Email:&nbsp;&nbsp;</label>
+            <input type="email" class="iinput" id="email" name="email" required><br>
+            <label for="password" class="llabel">Password:&nbsp;&nbsp;</label>
+            <input type="password" class="iinput" id="password" name="password" required><br>
+            <br><br><button class="btn btn-primary" id = "submitbutton" type="submit">Log in!</button>
+        </form>
+        <div id="picture">
+            <img src="Illustrations/urban-line-308.png" alt="Pic" width="500">
+        </div>
+
+
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
