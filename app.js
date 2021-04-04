@@ -25,7 +25,7 @@ app.use(cookieParser())
 
 //app.use(express.urlencoded());
 
-
+app.use(express.static(__dirname + '/script'));
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/model'));
 app.use(bodyParser.json());
@@ -45,8 +45,6 @@ mongoose.connect('mongodb://localhost:27017/HackMelbourne', {
 })
 
 
-app.use(express.static(__dirname + '../public'));
-app.use(express.static(__dirname + '../model'));
 app.use(bodyParser.urlencoded({ extended: false }))
 
 const UserModel = require('./model/UserModel');
@@ -55,8 +53,12 @@ const Users = mongoose.model('Users', UserModel);
 const MoodModel = require('./model/MoodModel');
 const Moods = mongoose.model('Mood', MoodModel);
 
-const DiaryModel = require('./model/DiaryModel');
-const Diarys = mongoose.model('Diarys', DiaryModel);
+const MeditationModel = require('./model/MeditationModel');
+const Meditation = mongoose.model('Meditation', MeditationModel);
+const { body } = require('express-validator');
+
+// const DiaryModel = require('./model/DiaryModel');
+// const Diarys = mongoose.model('Diarys', DiaryModel);
 
 // app.get('/user/:userID/diary/:entryID/edit', (req, res) => {
 //     const { userID, moodID } = req.params;
@@ -85,6 +87,24 @@ app.use((req, res, next) => {
     next();
 })
 
+app.post('/medidate/new', async(req, res) => {
+    console.log(req.body);
+    const d = new Date();
+    console.log(req.cookies);
+    console.log(req.body);
+    const newMedidate = new Meditation({
+        _id: uuidv4(),
+        userID: req.cookies.userid,
+        date: d.toString(),
+        time: req.body.time,
+    });
+    await newMedidate.save().then(() => {
+        res.redirect(`/user/${req.cookies.userid}/meditation`)
+
+    })
+
+})
+
 app.delete('/user/:userID/mood/:moodID', async(req, res) => {
     Moods.findByIdAndDelete(req.params.moodID, () => {
         res.redirect(`/user/${req.params.userID}/mood`)
@@ -92,22 +112,11 @@ app.delete('/user/:userID/mood/:moodID', async(req, res) => {
 })
 
 app.put('/user/:userID/mood/:moodID/edit', async(req, res) => {
-
-    // Moods.findById(req.params.userID)
-    //     .then(result => {
-    //         Moods.findById(moodID)
-    //             .then(result => {
-    //                 Object.assign(userData, result._doc)
-    //                 console.log(userData);
-    //                 res.render('pages/user/mood/edit', userData)
-    //             })
-    //     })
-
     await Moods.findById(req.params.moodID)
         .then((result) => {
             result.description = req.body.description
             Moods.findByIdAndUpdate(req.params.moodID, result, () => {
-                res.redirect(`/user/${req.params.userID}/mood`)
+                res.redirect(`/user/${req.params.userID}/meditation`)
             });
         })
 })
@@ -190,20 +199,14 @@ app.get('/user/:userID/mood', async(req, res) => {
                 res.render('pages/user/mood/moodPage', userData);
             })
         );
-
-
 });
-
-
 
 app.get('/user/:userID/helpcall', (req, res) => {
     const { userID } = req.params;
     res.render('pages/user/help', req.params)
 })
 
-
 app.get('/user/:userID/meditation', (req, res) => {
-    const { userID } = req.params;
     res.render('pages/user/meditation', req.params)
 })
 
@@ -216,11 +219,9 @@ app.get('/user/:userID', async(req, res) => {
     console.log(req.cookies)
     await Users.findById(req.params.userID)
         .then(result => res.render('pages/user/userpage', result));
-    // res.render('pages/user/userpage', result)
 })
 
 app.post('/user/new', async(req, res) => {
-
     const requestBody = req.body;
     requestBody._id = uuidv4();
     const d = new Date();
@@ -267,6 +268,10 @@ app.post('/login', async(req, res) => {
         res.redirect('/login')
     })
 
+})
+
+app.delete('/logout', (req, res) => {
+    console.log(req.cookies);
 })
 
 app.get('/login', (req, res) => {
