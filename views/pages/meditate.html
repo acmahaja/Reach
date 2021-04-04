@@ -9,38 +9,56 @@
         <script src="meditate.js"></script>
     </head>
     <body style = "background-color: #f1e5f5; text-align: center;">
-        <nav class="navbar navbar-light bg-light">
-            <form class="col text-center" class="container-fluid justify-content-start">
-              <button class="btn btn-outline-success me-2" type="button"><a href="/">Home</a></button>
-              <button class="btn btn-sm btn-outline-secondary" type="button"><a href="/">Logout</a></button>
-            </form>
-        </nav>
+        <div>
+            <nav class="navbar navbar-expand-md navbar-light bg-light">
+                <a href="https://acmahaja.github.io/hackithon/views/pages/landing.html" class="navbar-brand">
+                    <img src="./assets/logoPH.png" height="30" alt="REACH logo">
+                    REACH                
+                </a>
+               
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="justify-content-end collapse navbar-collapse" id="navbarCollapse" style="font-size: min(5vh, 20px);">
+                    <div class="navbar-nav">
+                        <a href="https://acmahaja.github.io/hackithon/views/pages/homepage.html" class="nav-item nav-link"> Home</a>
+                        <a href="https://acmahaja.github.io/hackithon/views/pages/meditate.html" class="active nav-item nav-link"> Meditation</a>
+                        <a href="https://acmahaja.github.io/hackithon/views/pages/mood.html" class="nav-item nav-link">Mood</a>
+                        <a href="https://acmahaja.github.io/hackithon/views/pages/resources.html" class="nav-item nav-link">Resources</a>
+                        <a href="https://acmahaja.github.io/hackithon/views/pages/aboutus.html" class="nav-item  nav-link">About Us</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
         <div id = "top" class="alert alert-info" role="alert">
             Meditation is the act of clearing your mind. &#x2728;
         </div>
         <h1 class = "edgy" style = "font-size: 45px;">Meditate.</h1>
-        <p class = "padder" style = "font-size: 15px;"><i>"There are many good reasons why a person might choose to meditate—the classic reason being to reduce psychological suffering. Paradoxically, this is accomplished not by trying to avoid or improve one’s experience, but by clearly observing how thoughts and emotions arise, proliferate, and become enshrined in behavior. Seeing the whole apparatus at work can be incredibly freeing."</i> - Samuel Harris.</p>
-        <div id="picture">
+        <p id="remove1" class = "tomove padder" style = "font-size: 15px;"><i>"There are many good reasons why a person might choose to meditate—the classic reason being to reduce psychological suffering. Paradoxically, this is accomplished not by trying to avoid or improve one’s experience, but by clearly observing how thoughts and emotions arise, proliferate, and become enshrined in behavior. Seeing the whole apparatus at work can be incredibly freeing."</i> - Samuel Harris.</p>
+        <div id="picture" class="tomove">
             <img src="meditate.png" alt="Pic" width="350">
         </div>
-        <p class = "padder">Meditation is a powerful tool for <b>clearing the mind</b> and living an <b>examined life</b>. This page of Reach is dedicated for providing a tool for doing just that. Below is a timer you can use to specify and start a meditation session - how long is entirely up to you. If you're signed in you're able to:</p>
+        <div id="remove2" class="tomove"><p class = "padder">Meditation is a powerful tool for <b>clearing the mind</b> and living an <b>examined life</b>. This page of Reach is dedicated for providing a tool for doing just that. Below is a timer you can use to specify and start a meditation session - how long is entirely up to you. If you're signed in you're able to:</p>
         <ul class="ul">
             <li>Track your meditation progress &#x1F389;</li>
             <li>Visually see your meditation history plotted graphically &#x1F4C8;</li>
             <li>See your streaks &#x1F525;</li>
         </ul>
+        <!-- <button class="hide" id="tester">Hey.</button> -->
+        <p></p>
         <p>If you're ready to get started, enter below the amount of time you'd like to meditate for in <b>minutes</b>.</p>
         <form id="form1" onsubmit="return false">
             <input id="time" placeholder="How many minutes?" type="text">
             <input id="submit" value="Let's go!" type="submit">
-        </form>
+        </form></div>
         <p></p>
         <button id="button" style = "display: none;">Click me!</button>
         <div id="timedisplay"></div>
         <p></p>
-        <div id="timerobject" style = "display: none;">&#x23F3; Happy medidating! Time remaining: <span id="timer"></span> &#x23F3;</div>
+        <div id="timerobject" style = "display: none;">&#x23F3; Happy meditating! Time remaining: <span id="timer"></span> &#x23F3;</div>
         <p></p>
-        <div id = "finished" style = "display: none;">Excellent work today! Your streak is now ___. See you next time &#x1F438; </div>
+        <div id = "finished" style = "display: none;">Excellent work today! See you next time! &#x1F438; </div>
     </body>
 </html>
 
