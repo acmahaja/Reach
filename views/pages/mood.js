@@ -11,3 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }  
 
 });
+
+window.onscroll = () => {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    document.querySelector('body').style.background = 'white';
+  } else {
+    document.querySelector('body').style.background = '#c4f8de';
+  }
+}
