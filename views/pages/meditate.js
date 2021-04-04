@@ -20,14 +20,17 @@ function startTimer(duration, display) {
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-            var audio = new Audio('sound.mp3');
-            audio.play();
+            // var audio = new Audio('sound.mp3');
+            // audio.play();
             timer = duration;
+            console.log(length);
+            const printed = length/60; 
             broken = true;
             document.querySelector('#finished').style.display = 'block';
-            document.querySelector('#finished').style.fontSize = '30px';
-            document.querySelector('#emoji').style.display = 'block';
-            document.querySelector('#timedisplay').innerHTML = `Today's session was ${duration} minutes long~`;
+            document.querySelector('#finished').style.fontSize = '20px';
+            // document.querySelector('#emoji').style.display = 'block';
+            document.querySelector('#timedisplay').innerHTML = `Today's session was ${printed} minutes long~`;
+            document.querySelector('#total').innerHTML = `${printed}`;
         }
     }, 1000);
 }
@@ -39,16 +42,22 @@ function functSubmit(event) {
     var seconds = length*60;
     document.querySelector("#timerobject").style.display = 'block';
     document.querySelector('#timerobject').style.fontSize = '30px';
-    var audio = new Audio('gong.mp3');
-    audio.volume = 0.4;
-    audio.play();
+    // var audio = new Audio('gong.mp3');
+    // audio.volume = 0.4;
+    // audio.play();
     startTimer(seconds, display);
   }
 
 document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('#form1').addEventListener("submit", functSubmit);
-
+    
+    document.addEventListener('click', event => {
+        const element = event.target;
+        if (element.className === 'hide') {
+            document.querySelector('#top').remove();
+        }
+    });
 //setInterval(count, 1000) 
 })
 

@@ -63,3 +63,10 @@ td
   display: inline-block;
   float: left;
 }
+
+.movement {
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
