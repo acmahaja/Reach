@@ -85,6 +85,12 @@ app.use((req, res, next) => {
     next();
 })
 
+app.delete('/user/:userID/mood/:moodID', async(req, res) => {
+    Moods.findByIdAndDelete(req.params.moodID, () => {
+        res.redirect(`/user/${req.params.userID}/mood`)
+    })
+})
+
 app.put('/user/:userID/mood/:moodID/edit', async(req, res) => {
 
     // Moods.findById(req.params.userID)
@@ -133,9 +139,8 @@ app.post('/mood/new', (req, res) => {
     console.log(body);
     const newMoods = new Moods(body);
     newMoods.save().then((mood) => {
-        res.redirect(` / user / $ { body.userID }
-                            /mood/$ { body._id }
-                            /`);
+
+        res.redirect(`/user/${body.userID}/mood/${body._id}`)
     }).catch((error) => {
         console.log(error);
     });
@@ -144,6 +149,7 @@ app.post('/mood/new', (req, res) => {
 app.get('/user/:userID/mood/new', (req, res) => {
     res.render('pages/user/mood/new')
 })
+
 
 
 app.get('/user/:userID/mood/:moodID', async(req, res) => {

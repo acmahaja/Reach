@@ -24,9 +24,11 @@
     <a href="./mood/new">New</a>
     <%for(let mood of moods){%>
         <p><a href=<%=`./mood/${mood._id}`%>> <%=mood.date%></a>:
-            <%=mood.description%> <a href="./edit">Edit</a>
+            <%=mood.description%> <a href=<%=`./mood/${mood._id}/edit`%>>Edit</a>
+                <form action=<%=`./mood/${mood._id}?_method=DELETE`%> method="POST">
+                    <button type="submit">Delete</button>
+                </form>
                 <%}%>
-
         </p>
 
 </body>
