@@ -1,0 +1,122 @@
+*{
+    font-family: 'Lekton', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav{
+    font-size: min(5vh, 30px);
+}
+
+#parentofgreetandimage{
+    background-color: #FDDBD0;
+    height: inherit;
+    width: inherit;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;    
+}
+
+#mainimg{
+    width: 100%;
+}
+
+
+#greeting{
+    font-size: min(15vw, 180px);
+    height: 30vh;
+    padding: 20vh 0 15vh 0; font-weight: 600;
+    text-align:center,center;
+}
+
+#itemsandlogin{
+    font-size: min(5vh);
+    padding-top: max(10vh, 30px);
+    background-color: #FFFFFF; /*#f1e5f5 */
+    height: inherit;
+    width: inherit;
+
+    /* DO WE WANT A BACKGROUND IMAGE?
+    background-image: url("/assets/flyingmsg2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    */
+}
+
+#paragraphexpl{
+    font-size: min(3vh, 50px);
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+#listoflinks{
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+li{
+    color:#AFDFDB;
+}
+
+#main_central_content{
+    height: inherit;
+    width: inherit;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited{
+    background-color: rgb(175,223, 219) !important;
+    border: none !important;
+    color: rgb(255, 255, 255) !important;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    font-weight:400;
+    margin-top: 3vh;
+}
+
+
+p{
+    font-size: max(1.8h, 30px);
+}
+
+h1{
+    color: #AFDFDB;
+    font-weight: 800;
+    font-size: 5vh;
+}
+
+h2{
+    font-size: 3.5vh;
+}
+
+#photosofus{
+    display: flex;
+    flex-direction: column;
+    font-size: max(2.5vh, 30px);
+}
+
+#teamnametext{
+    color: #99ddd7;
+    font-weight: 800;
+}
+
+.card-title{
+    font-size: max(2.5vh, 30px);
+    font-weight: 900;
+}
+
+.card-body{
+    padding: 0px;
+}
+
+.card-image-top{
+    max-width: max(10vw, 50px);
+}

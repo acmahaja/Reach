@@ -34,8 +34,8 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-mongoose.connect('mongodb://localhost:27017/HackMelbourne', {
-    //mongoose.connect('mongodb+srv://acmahaja:GxHmB1N69HeCXsuo@cluster0.tsomk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+//mongoose.connect('mongodb://localhost:27017/HackMelbourne', {
+mongoose.connect('mongodb+srv://acmahaja:GxHmB1N69HeCXsuo@cluster0.tsomk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
@@ -285,16 +285,26 @@ app.get('/login', (req, res) => {
 })
 
 
-app.get('/credits', (req, res) => {
-    res.render('pages/credits')
+app.get('/meditation', (req, res) => {
+    res.render('pages/user/meditation', req.params)
 })
 
+
+app.get('/home', (req, res) => {
+    res.render('pages/home', req.params)
+});
+
+app.get('/resources', (req, res) => {
+    res.render('pages/resources')
+})
+
+//✅
 
 app.get('/about', (req, res) => {
     res.render('pages/about')
 })
 
-
+//✅
 app.get('/', (req, res) => {
     res.render('pages/index');
 })

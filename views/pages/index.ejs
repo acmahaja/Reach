@@ -2,19 +2,56 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- MY STYLESHEET-->
+    <link rel="stylesheet" href="./styles/styles2.css">
+
+    <!-- Display NEED TO CHANGE-->
+    <title>REACH - Landing Page</title>
+    <link rel="icon" href="./assets/logoPH.png">
+
+    <!-- ANIMATE.STYLE LIB-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- GOOGLE FONTS - HOPEFULLY RIGHT ONE?-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lekton&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <a href="/">Home Pages</a>
-    <a href="/about">About Pages</a>
-    <a href="/credits">Credit Pages</a>
-    <a href="/login">Login Pages</a>
-    <h1>Home Page</h1>
+    <div id="parentofgreetandimage" class="animate__animated animate__fadeOutUp animate__slow animate__delay-1s animate">
+        <!-- CAN CHANGE TO fadeOutRight or SOMETHING ELSE-->
+        <div id="greeting">
+            R E A C H
+        </div>
+        <div id="picture">
+            <img src="./assets/meditation222.png" alt="" style="width: min(100vw, 1080px) ">
+        </div>
+    </div>
+    <div id="itemsandlogin">
+        <ul id="listoflinks">
+            <li> WHAT IS REACH?</li>
+            <p id="paragraphexpl">R E A C H is a webapp designed to help boost your productivity by providing resources that help you stay in control of your mental health. Meditation, mood logs, streaks, links to external help and more! It's also our entry to the HackMelbourne's
+                Hackiethon 2021!</p>
+            <li> HOW DOES IT WORK?</li>
+            <p id="paragraphexpl">With R E A C H, you can log your mood, meditate and see indicators of your mental health over time. This helps keep you productive and healthy.</p>
+        </ul>
+        <a id="loginbutton" href="/login" class="btn btn-primary" role="button">LOG IN</a>
+        <a id="loginbutton" href="signup" class="btn btn-primary" role="button">SIGN UP</a>
+    </div>
 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
