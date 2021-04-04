@@ -20,8 +20,8 @@ function startTimer(duration, display) {
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-            // var audio = new Audio('sound.mp3');
-            // audio.play();
+            var audio = new Audio('bell.wav');
+            audio.play();
             timer = duration;
             console.log(length);
             const printed = length/60; 
